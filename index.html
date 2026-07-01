@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Klara Kaleb</title>
+<meta name="description" content="Klara Kaleb — Senior Research Associate in Machine Learning at the University of Oxford. LLMs and NLP for nature recovery and the scientific process.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbf8f1; --surface:#ffffff; --tx:#2b3038; --dim:#6f6a60; --faint:#948d80;
+    --teal:#0a7d80; --teal-d:#086467; --rust:#b5502e;
+    --bd:#eae2d3; --shadow:0 1px 2px rgba(60,50,30,.04),0 8px 24px rgba(60,50,30,.05);
+    --serif:'Lora',Georgia,serif; --sans:'Inter',-apple-system,'Segoe UI',Roboto,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#15140f; --surface:#1c1b16; --tx:#e9e4d8; --dim:#a8a094; --faint:#7f786c;
+    --teal:#4fb6b2; --teal-d:#6ac6c2; --rust:#d98b60;
+    --bd:#2c2a22; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25);
+  }}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--tx);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{color:var(--rust);text-decoration:underline;text-underline-offset:2px}
+
+  .page{max-width:1120px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:290px 1fr;gap:64px;align-items:start}
+
+  /* sidebar */
+  aside.side{position:sticky;top:0;padding:52px 0 40px}
+  .side-photo{margin:0}
+  .side-photo img,.side-photo .mono{width:100%;max-width:230px;aspect-ratio:auto;border-radius:16px;box-shadow:var(--shadow);display:block}
+  .side-photo .mono{aspect-ratio:3/4;background:linear-gradient(135deg,var(--teal),var(--rust));color:#fff;font-family:var(--serif);font-weight:700;font-size:52px;align-items:center;justify-content:center}
+  .side-photo figcaption{font-size:11px;color:var(--faint);margin-top:9px;max-width:230px;line-height:1.4}
+  aside h1{font-family:var(--serif);font-weight:700;font-size:30px;line-height:1.12;margin:22px 0 8px}
+  .title{font-size:14px;color:var(--dim);margin:0 0 4px}
+  .title b{color:var(--teal-d);font-weight:600}
+  .blurb{font-size:13.5px;color:var(--faint);margin:8px 0 16px}
+  .links{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+  .links a{font-size:13px;font-weight:500;color:var(--dim);border:1px solid var(--bd);border-radius:999px;padding:4px 11px;background:var(--surface)}
+  .links a:hover{color:var(--rust);border-color:var(--rust);text-decoration:none}
+  .snav{display:flex;flex-direction:column;gap:2px;border-top:1px solid var(--bd);padding-top:14px}
+  .snav a{font-size:13.5px;color:var(--dim);padding:3px 0}
+  .snav a:hover{color:var(--rust);text-decoration:none}
+
+  /* main */
+  main{min-width:0;padding:52px 0 40px}
+  section{padding:0 0 34px}
+  h2{font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--rust);margin:0 0 16px}
+  p{margin:0 0 14px}
+  .lead{font-size:17px}
+  main p, .edu .ei{text-align:justify;hyphens:auto}
+  section:first-child{padding-top:4px}
+
+  .tags{display:flex;flex-wrap:wrap;gap:9px}
+  .tag{font-size:13.5px;color:var(--tx);background:var(--surface);border:1px solid var(--bd);border-radius:8px;padding:6px 11px}
+  .tag b{color:var(--teal-d)}
+
+  .pub{display:flex;gap:16px;padding:2px 0 4px}
+  .pub .yr{flex:0 0 68px;font-variant-numeric:tabular-nums;color:var(--faint);font-size:14px;padding-top:2px}
+  .pub .t{font-weight:600}
+  .pub .meta{font-size:14px;color:var(--dim);margin-top:2px}
+  .pub .meta .venue{font-style:italic}
+  .pub .plinks{margin-top:5px;font-size:13px;display:flex;gap:12px}
+  .edu{padding:2px 0 14px}
+  .edu .deg{font-weight:600}
+  .edu .ei{font-size:14px;color:var(--dim);margin-top:2px}
+  .more{font-size:13.5px;color:var(--dim);margin-top:12px}
+
+  .photo1{margin:16px 0 0}
+  .photo1 img{width:100%;border-radius:12px;box-shadow:var(--shadow);display:block}
+  .photo1 figcaption{font-size:11.5px;color:var(--faint);margin-top:7px}
+
+  footer{border-top:1px solid var(--bd);padding-top:20px;color:var(--faint);font-size:13px}
+
+  @media (max-width:860px){
+    .page{grid-template-columns:1fr;gap:0;padding:0 22px}
+    aside.side{position:static;padding:40px 0 8px;text-align:center}
+    .side-photo img,.side-photo .mono{margin:0 auto}
+    .side-photo figcaption{margin-left:auto;margin-right:auto}
+    .links{justify-content:center}
+    .snav{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:14px}
+    main{padding-top:20px}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <aside class="side">
+    <figure class="side-photo">
+      <img src="coco.jpg" alt="Klara Kaleb with Coco, her golden retriever, on a coastal hike"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="mono" style="display:none" aria-hidden="true">KK</div>
+      <figcaption>With Coco, my 15-year-old golden sidekick.</figcaption>
+    </figure>
+    <h1>Klara Kaleb</h1>
+    <p class="title">Senior Research Associate in Machine&nbsp;Learning<br><b>University of Oxford</b></p>
+    <p class="blurb">A computational scientist applying machine learning across genomes, brains and language — now to the scientific process and the environment.</p>
+    <div class="links">
+      <a href="https://www.stats.ox.ac.uk/people/dr-klara-kaleb">Oxford</a>
+      <a href="https://github.com/klarakaleb">GitHub</a>
+      <a href="https://scholar.google.com/citations?user=11qgBWAAAAAJ&hl=en">Scholar</a>
+      <a href="https://orcid.org/0000-0003-2091-2114">ORCID</a>
+      <a href="https://www.linkedin.com/in/klara-kaleb-875391131/">LinkedIn</a>
+      <a href="https://bsky.app/profile/klarakaleb.bsky.social">Bluesky</a>
+    </div>
+    <nav class="snav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#patents">Patents</a>
+      <a href="#service">Talks &amp; service</a>
+      <a href="#awards">Awards</a>
+      <a href="#beyond">Off the clock</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>I'm a Senior Research Associate in Machine Learning in Oxford's Department of Statistics, funded by the <a href="https://www.leverhulme.ac.uk/">Leverhulme Trust</a> and supervised by <a href="https://www.stats.ox.ac.uk/~teh/">Prof Yee Whye Teh</a>, <a href="https://www.biology.ox.ac.uk/people/nathalie-seddon">Prof Nathalie Seddon</a> and <a href="https://naturerecovery.ox.ac.uk/people/steven-reece/">Dr Steven Reece</a>. I use large language models, NLP and information retrieval to mine the evidence base for <b>nature-based solutions</b> to climate change, with the <a href="https://naturerecovery.ox.ac.uk/">Leverhulme Centre for Nature Recovery</a> and the <a href="https://www.naturebasedsolutionsinitiative.org/">Nature-based Solutions Initiative</a>. It's also a vantage point onto other projects — mainly <b>LLM robustness</b> and its real-world applications.</p>
+      <p>Before Oxford, I worked across computational science: comparative genomics in Switzerland with <b><a href="https://comparative-genomics.ch/people/christophe-dessimoz/">Prof Christophe Dessimoz</a> and <a href="https://comparative-genomics.ch/people/adrian-altenhoff/">Dr Adrian Altenhoff</a></b> (the <a href="https://omabrowser.org/">OMA project</a>); a PhD in <b>computational neuroscience</b> at Imperial — during which I also worked with <b><a href="https://barefootlaw.org/">BarefootLaw</a></b> on <b><a href="https://github.com/Clopath-Lab/bfl-winnie-public">Winnie</a></b>, an NLP tool widening access to justice across East Africa; and a research residency at <b><a href="https://x.company/">X, Alphabet's moonshot factory</a></b>, probing frontier LLMs and helping start its <a href="https://x.company/blog/posts/moonshot-for-professional-intelligence/">moonshot for professional intelligence</a>.</p>
+      <p>If there's a through-line, it's the kind of problem I'm drawn to: <a href="https://en.wikipedia.org/wiki/Wicked_problem">wicked ones</a> — messy, cross-disciplinary, resistant to any single method. I try to <a href="https://urilevine.com/book/">fall in love with the problem, not the solution</a> — and follow it wherever it leads.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research interests</h2>
+      <p>Large language models and NLP — their evaluation, robustness and real-world applications; AI agents and evidence synthesis for the scientific process, especially nature-based solutions and climate; and neuro-AI, taking learning inspiration from the brain.</p>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="pub">
+        <div class="yr">2019–2024</div>
+        <div class="body">
+          <div class="t">PhD, Computational Neuroscience · <a href="https://www.imperial.ac.uk/">Imperial College London</a></div>
+          <div class="meta">Supervised by <a href="https://profiles.imperial.ac.uk/c.clopath">Prof Claudia Clopath</a> · funded by the <a href="https://wellcome.org/">Wellcome Trust</a>. Thesis on biologically-plausible learning: network homeostasis, robust motor control, and credit assignment through space and time.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2018–2019</div>
+        <div class="body">
+          <div class="t">MSc, Theoretical Systems Biology &amp; Bioinformatics · <a href="https://www.imperial.ac.uk/">Imperial College London</a></div>
+          <div class="meta">Funded by the <a href="https://wellcome.org/">Wellcome Trust</a>. Three research projects: self-organising systems with <a href="https://profiles.imperial.ac.uk/r.endres">Prof Robert Endres</a>; multi-scale clustering of single-cell RNA-seq data via <a href="https://github.com/barahona-research-group/PyGenStability">Markov Stability</a> with <a href="https://profiles.imperial.ac.uk/m.barahona">Prof Mauricio Barahona</a>; and an inhibitory learning rule for network homeostasis, which became <a href="https://doi.org/10.1016/j.celrep.2021.109577">Kaleb et al. 2021</a>.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2015–2018</div>
+        <div class="body">
+          <div class="t">BSc, Biomedical Sciences · <a href="https://www.ucl.ac.uk/">UCL</a></div>
+          <div class="meta">Final-year research at the <b><a href="https://www.crick.ac.uk/">Francis Crick Institute</a></b> with <a href="https://www.crick.ac.uk/research/find-a-researcher/peter-ratcliffe">Sir Peter Ratcliffe</a> and <a href="https://profiles.ucl.ac.uk/34674-chris-barnes">Prof Chris Barnes</a>, on kidney-cancer transcriptomics (bulk RNA-seq).</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications &amp; writing</h2>
+      <div class="pub">
+        <div class="yr">2026</div>
+        <div class="body">
+          <div class="t"><a href="https://arxiv.org/abs/2603.00718">SkillCraft: Can LLM Agents Learn to Use Tools Skillfully?</a></div>
+          <div class="meta"><span class="venue">arXiv:2603.00718</span>, 2026.</div>
+          <div class="plinks"><a href="https://arxiv.org/abs/2603.00718">arXiv</a></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2025</div>
+        <div class="body">
+          <div class="t"><a href="https://arxiv.org/abs/2506.01687">StochasTok: Improving Fine-Grained Subword Understanding in LLMs</a></div>
+          <div class="meta"><span class="venue">Workshop on Reasoning &amp; Planning for LLMs</span>, 2025.</div>
+          <div class="plinks"><a href="https://arxiv.org/abs/2506.01687">arXiv</a><a href="https://github.com/anyasims/stochastok">Code</a></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2025</div>
+        <div class="body">
+          <div class="t"><a href="https://naturerecovery.ox.ac.uk/news/supporting-oxfordshires-local-nature-recovery-strategy/">Oxfordshire Local Nature Recovery Strategy — phase 3 consultation: analysis of responses</a></div>
+          <div class="meta"><span class="venue">Leverhulme Centre for Nature Recovery</span>, 2025.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2024</div>
+        <div class="body">
+          <div class="t"><a href="https://openreview.net/forum?id=xavWvnJTST">Feedback control guides credit assignment in recurrent neural networks</a></div>
+          <div class="meta"><span class="venue">NeurIPS</span> (Advances in Neural Information Processing Systems 37), 2024.</div>
+          <div class="plinks"><a href="https://github.com/klarakaleb/feedback-control">Code</a></div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2024</div>
+        <div class="body">
+          <div class="t"><a href="https://spiral.imperial.ac.uk/entities/publication/cd2ff196-8155-462e-b11d-f55b7ed2b85f">From bottom-up to top-down: a computational exploration of plasticity in neural networks of the brain</a></div>
+          <div class="meta">PhD thesis · <span class="venue">Imperial College London</span>, 2024. Funded by the <a href="https://wellcome.org/">Wellcome Trust</a>.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2021</div>
+        <div class="body">
+          <div class="t"><a href="https://doi.org/10.1016/j.celrep.2021.109577">Network-centered homeostasis through inhibition maintains hippocampal spatial map and cortical circuit function</a></div>
+          <div class="meta"><span class="venue">Cell Reports</span>, 2021.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2019</div>
+        <div class="body">
+          <div class="t"><a href="https://doi.org/10.12688/f1000research.17548.2">Expanding the Orthologous Matrix (OMA) programmatic interfaces: REST API and the OmaDB packages for R and Python</a></div>
+          <div class="meta"><span class="venue">F1000Research</span>, 2019 · R package on <a href="https://bioconductor.org/packages/OmaDB">Bioconductor</a> (5,600+ downloads).</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2018</div>
+        <div class="body">
+          <div class="t"><a href="https://doi.org/10.1093/nar/gkx1019">The OMA orthology database in 2018: retrieving evolutionary relationships among all domains of life through richer web and programmatic interfaces</a></div>
+          <div class="meta"><span class="venue">Nucleic Acids Research</span>, 2018.</div>
+        </div>
+      </div>
+      <p class="more">Full list: <a href="https://scholar.google.com/citations?user=11qgBWAAAAAJ&hl=en">Google&nbsp;Scholar</a> · <a href="https://orcid.org/0000-0003-2091-2114">ORCID</a> · <a href="https://www.researchgate.net/scientific-contributions/Klara-Kaleb-2134713766">ResearchGate</a>.</p>
+    </section>
+
+    <section id="patents">
+      <h2>Patents</h2>
+      <div class="pub">
+        <div class="yr">2026</div>
+        <div class="body">
+          <div class="t"><a href="https://patents.google.com/?inventor=Klara+Kaleb&q=%22Segmenting+text+using+machine+learning+models%22">Segmenting text using machine learning models</a></div>
+          <div class="meta">US Patent Application 18/785,645 · co-inventor.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2024</div>
+        <div class="body">
+          <div class="t"><a href="https://patents.google.com/?inventor=Klara+Kaleb&q=%22Task+performance+using+language+models%22">Task performance using language models</a></div>
+          <div class="meta">US Patent Application 18/674,444 · co-inventor.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2024</div>
+        <div class="body">
+          <div class="t"><a href="https://patents.google.com/patent/US20240289733A1/en">Large language model interface for supply chain networks</a></div>
+          <div class="meta">US Patent Application 18/589,228 · co-inventor.</div>
+        </div>
+      </div>
+      <p class="more">Up-to-date list on <a href="https://scholar.google.com/citations?user=11qgBWAAAAAJ&hl=en">Google&nbsp;Scholar</a>.</p>
+    </section>
+
+    <section id="service">
+      <h2>Talks &amp; service</h2>
+      <p>Co-organised the <a href="https://agents4academia.github.io/">Agents4Academia</a> hackathon; presented posters at <a href="https://www.cosyne.org/past-conferences">COSYNE</a> (2020, 2022) and <a href="https://neurips.cc/Conferences/2024">NeurIPS</a> (2024); reviewer for <a href="https://iclr.cc/Conferences/2023">ICLR</a> workshops (2023) and <a href="https://neurips.cc/Conferences/2026">NeurIPS</a> (2026).</p>
+    </section>
+
+    <section id="awards">
+      <h2>Awards</h2>
+      <div class="pub">
+        <div class="yr">2024</div>
+        <div class="body">
+          <div class="t">O-1A “Extraordinary Ability” visa</div>
+          <div class="meta">US visa, in the field of computational sciences.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2018</div>
+        <div class="body">
+          <div class="t">Wellcome Trust PhD studentship</div>
+          <div class="meta">4-year programme in Theoretical Systems Biology &amp; Bioinformatics, Imperial College London.</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2014</div>
+        <div class="body">
+          <div class="t">Outstanding Cambridge Learner Award</div>
+          <div class="meta">Highest mark in Kenya, Cambridge International AS-Level Physics.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="beyond">
+      <h2>Off the clock</h2>
+      <p>I grew up in East Africa with front-row access to some of the world's most incredible mountains — I've climbed <b>Mount Stanley</b>, <b>Mount Kenya</b>, <b>Mount Napak</b> and <b>Mount Sabinyo</b>. That upbringing left me with a global conscience — and is a big part of why I work on the environment today.</p>
+      <figure class="photo1">
+        <img src="outdoors1.jpg" alt="Sunrise at the peak of Mount Napak, Uganda, 2022" loading="lazy">
+        <figcaption>Sunrise at the peak of Mt Napak in 2022.</figcaption>
+      </figure>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Best reached via my <a href="https://www.stats.ox.ac.uk/people/dr-klara-kaleb">Oxford page</a>, <a href="https://www.linkedin.com/in/klara-kaleb-875391131/">LinkedIn</a> or <a href="https://bsky.app/profile/klarakaleb.bsky.social">Bluesky</a> — or <a id="em" href="#">email me</a>.</p>
+    </section>
+
+    <footer>© 2026 Klara Kaleb</footer>
+  </main>
+
+</div>
+<script>
+  /* assemble email at runtime so scrapers don't harvest it from the HTML */
+  (function(){var p=['klara.kaleb','stats.ox.ac.uk'],a=document.getElementById('em');
+   if(a){var m=p[0]+'@'+p[1];a.href='mailto:'+m;a.title=m;}})();
+</script>
+</body>
+</html>
